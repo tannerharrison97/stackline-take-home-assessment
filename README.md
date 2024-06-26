@@ -1,6 +1,8 @@
 # Stackline Take Home Assement
 Completed by Tanner Harrison - June 25, 2024
 
+Solution can be viewed at https://tannerharrison97.github.io/stackline-take-home-assessment/
+
 ## Solution
 
 The implemented solution uses
