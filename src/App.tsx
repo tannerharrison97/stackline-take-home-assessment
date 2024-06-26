@@ -25,12 +25,12 @@ function App() {
 
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', backgroundColor: 'rgb(246, 248, 250)'}}>
+    <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'rgb(246, 248, 250)' }}>
       <ThemeProvider theme={theme}>
         <Header />
-          {productStatus === ProductStatus.LOADING && <div>Loading...</div>}
-          {productStatus === ProductStatus.SUCCEEDED && activeProductIndex !== null && <ProductView product={products[activeProductIndex]} />}
-          {productStatus === ProductStatus.FAILED && <div>{productError}</div>}
+        {productStatus === ProductStatus.LOADING && <div>Loading...</div>}
+        {productStatus === ProductStatus.SUCCEEDED && activeProductIndex !== null && <ProductView product={products[activeProductIndex]} />}
+        {productStatus === ProductStatus.FAILED && <div>{productError}</div>}
       </ThemeProvider>
     </div>
   );

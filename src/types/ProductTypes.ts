@@ -28,6 +28,6 @@ export interface Product {
 export enum ProductStatus {
     IDLE = 'idle',
     LOADING = 'loading',
-    SUCCEEDED ='succeeded',
+    SUCCEEDED = 'succeeded',
     FAILED = 'failed'
 }
