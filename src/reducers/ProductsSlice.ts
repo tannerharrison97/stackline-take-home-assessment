@@ -1,9 +1,7 @@
-// Import createAsyncThunk and createSlice from Redux Toolkit
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Product, ProductStatus } from '../types/ProductTypes';
 import mockProducts from '../data/stackline_frontend_assessment_data_2021.json'
 
-// Define a type for the slice state
 export interface ProductsState {
   products: any[];
   activeProductIndex: number | null;
@@ -11,7 +9,6 @@ export interface ProductsState {
   error: string | null;
 }
 
-// Initial state for the slice
 const initialState: ProductsState = {
   products: [],
   activeProductIndex: null,
@@ -19,7 +16,6 @@ const initialState: ProductsState = {
   error: null,
 };
 
-// Define the async thunk for fetching products
 const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
@@ -29,14 +25,13 @@ const fetchProducts = createAsyncThunk(
     await new Promise((resolve) => {
         setTimeout(() => {
             response = mockProducts as Product[];
-            resolve(response); // Resolve the promise with the response
+            resolve(response);
         }, 2000);
     });
     return response;
   }
 );
 
-// Create the slice
 const productsSlice = createSlice({
   name: 'products',
   initialState,
@@ -59,8 +54,6 @@ const productsSlice = createSlice({
   },
 });
 
-// Export the reducer
 export default productsSlice.reducer;
 
-// Export the async thunk
 export { fetchProducts };
